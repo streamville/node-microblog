@@ -30,7 +30,7 @@ const UserSchema = new Schema({
   },
   profilePic: {
     type: String,
-    default: "/images/profilePic.png"
+    default: "/images/profil-linkedin.jpg"
   }
 }, { timestamps: true });
 

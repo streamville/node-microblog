@@ -13,7 +13,7 @@ class Database {
   }
 
   connect(){
-    mongoose.connect("mongodb+srv://admin:yYYaFxOksQ5LbNhm@cluster0.ljknx.mongodb.net/nodemicroblogDB?retryWrites=true&w=majority")
+    mongoose.connect("ENTER_KEY_HERE")
     .then(() => {
     console.log("Database connection successful");
     })
