@@ -4,6 +4,8 @@
   --buttonHover: #d4edff;
   --lightGrey: rgb(230, 236, 240);
   --spacing: 15px;
+  --greyText: rgb(101, 119, 134);
+  --greyButtonText: rgba(0, 0, 0, 0.34);
 }
 
 * {
@@ -71,6 +73,12 @@ nav a:hover {
   border-radius: 50%;
 }
 
+button{
+  background-color: transparent;
+  border: none;
+  color: var(--greyButtonText);
+}
+
 /* containers */
 
 .postFormContainer {
@@ -115,3 +123,62 @@ nav a:hover {
 #submitPostBtn:disabled {
   background-color: var(--blueLight);
 } 
+
+.post {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing);
+  cursor: pointer;
+  border-bottom: 1px solid var(--lightGrey);
+  flex-shrink: 0;
+}
+
+.mainContentContainer {
+  flex: 1;
+  display: flex;
+}
+
+.postContentContainer {
+  padding-left: var(--spacing);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.username,
+.date {
+  color: var(--greyText);
+}
+
+.displayName{
+  font-weight: bold;
+}
+
+.header a:hover {
+  text-decoration: underline;
+}
+
+.header a,
+.header span {
+  padding-right: 5px;
+}
+
+.postBtnContainer button:hover{
+  background-color: #d4edff;
+  color: var(--blue);
+  border-radius: 50%;
+}
+
+.postFooter {
+  display: flex;
+  align-items: center;
+}
+
+.postFooter .postBtnContainer{
+  flex: 1;
+  display: flex;
+}
+
+.postFooter .postBtnContainer button {
+  padding: 2px 5px;
+}

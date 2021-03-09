@@ -15,22 +15,26 @@ app.set("views", "views");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
- // session
- app.use(session({
-   secret: "best tech startup",
-   resave: true,
-   saveUninitialized: false
- }))
+// session
+app.use(session({
+  secret: "best tech startup",
+  resave: true,
+  saveUninitialized: false
+}))
 
 // Routes
 const loginRoute = require('./routes/loginRoutes');
 const registerRoute = require('./routes/registerRoutes');
 const logoutRoute = require('./routes/logoutRoutes');
 
+// API route
+const postsApiRoute = require('./routes/api/posts');
+
 
 app.use("/login", loginRoute);
 app.use("/register", registerRoute);
 app.use("/logout", logoutRoute);
+app.use("/api/posts", postsApiRoute);
 
 app.get("/", middleware.requireLogin, (req, res, next) => {
 
