@@ -11,6 +11,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 router.get("/", (req, res, next) => {
   // No need for conditions.
   Post.find()
+  .populate("postedBy")
   .then(results => res.status(200).send(results))
   .catch(error => {
     console.log(error);

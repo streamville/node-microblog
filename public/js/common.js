@@ -32,9 +32,15 @@ $("#submitPostBtn").click(() => {
   })
 })
 
+
 // rendering posts container on the feed.
 function createPostHtml(postData){
   var postedBy = postData.postedBy;
+
+  if(postedBy._id === undefined){
+    return console.log("User obj not populated");
+  }
+
   var displayName = postedBy.firstName + " " + postedBy.lastName;
   var timeStamp = postData.createdAt;
 

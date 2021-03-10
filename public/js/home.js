@@ -2,7 +2,8 @@ $(document).ready(()=> {
   $.get("/api/posts", results => {
     
     // .postContainer from home.pug
-    outputPosts(results, $(".postContainer"))
+    outputPosts(results, $(".postContainer"));
+    console.log(results);
   })
 })
 
@@ -13,7 +14,7 @@ function outputPosts(results, container){
   // loop over results and then output
   // container from common.js
   results.forEach(result => {
-    var html = createPostHtml(results)
+    var html = createPostHtml(result)
     container.append(html);
   });
 
